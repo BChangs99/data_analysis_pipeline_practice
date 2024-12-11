@@ -1,3 +1,6 @@
+# Note this Makefile was adapted from the Makefile presented at the end of lecture 7
+# https://ubc-dsci.github.io/reproducible-and-trustworthy-workflows-for-data-science/lectures/180-pipelines-make.html
+
 .PHONY: all figures clean-dats clean-figures clean-all
 
 fig_path = "results/figure"
@@ -33,7 +36,6 @@ ${fig_path}/last.png : results/last.dat scripts/plotcount.py
 
 ${fig_path}/sierra.png : results/sierra.dat scripts/plotcount.py
 	python scripts/plotcount.py --input_file=results/sierra.dat --output_file=${fig_path}/sierra.png
-
 
 # Report generation
 report/count_report.html : report/count_report.qmd figures
